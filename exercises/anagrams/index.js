@@ -49,10 +49,7 @@ function helperCharMap(str) {
 
 //     // checking if sorted string matches other sorted string
 //     // if equal it's an anagram
-//     if(str1 === str2){
-//         return true
-//     }
-// }
+//     return str1 === str2
 
 // // getting rid of spacing and punctuationg with regex, lowercasing the string, 
 // // splitting to turn into an array, sort the array, and joining it back to a string
