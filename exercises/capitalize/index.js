@@ -22,22 +22,22 @@ function capitalize(str) {
 }
 
 
-// function capitalize(str) {
-//     // upper case the first letter of the string
-//     let newStr = str[0].toUpperCase()
+function capitalize(str) {
+    // upper case the first letter of the string
+    let newStr = str[0].toUpperCase()
   
-//     // iterating through the string starting at index 1 
-//     // checking if the letter on the left of letter we're iterating through is a space
-//     // if yes upper case it and add it to the new string
-//     // if not add the letter to the new string
-//     for(let i = 1; i < str.length; i++){
-//      if(str[i - 1] === ' '){
-//        newStr += str[i].toUpperCase()
-//      }else{
-//        newStr += str[i]
-//      }
-//     }
-//     return newStr
-// }
+    // iterating through the string starting at index 1 
+    // checking if the letter on the left of letter we're iterating through is a space
+    // if yes upper case it and add it to the new string
+    // if not add the letter to the new string
+    for(let i = 1; i < str.length; i++){
+     if(str[i - 1] === ' '){
+       newStr += str[i].toUpperCase()
+     }else{
+       newStr += str[i]
+     }
+    }
+    return newStr
+}
 
 module.exports = capitalize;
