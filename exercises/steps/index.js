@@ -20,7 +20,7 @@
 function steps(n) {
     // iterate through the row
     for(let row = 0; row < n; row++){
-        // declare an empty string to add '#' to it
+        // create an empty string to add '#' or ' ' to it
         let step = ''
         // iterate through column
         for(let column = 0; column < n; column++){
