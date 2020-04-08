@@ -9,23 +9,40 @@
 //   fib(4) === 3
 
 // for loop solution
-function fib(n) {
-    let arr = [0, 1]
-    for(let i = 0; i <= n; i++){
-    arr.push(arr[i] + arr[i + 1])
-    }
-    return arr[n]
-}
+// function fib(n) {
+//     let arr = [0, 1]
+//     for(let i = 0; i <= n; i++){
+//     arr.push(arr[i] + arr[i + 1])
+//     }
+//     return arr[n]
+// }
 console.log(fib(6))
+console.log(fib(15))
 
+// memoization solution
+function memoize(fn){
+    // storing args in cache
+    let cache = {}
+    return function(...args) {
+        // if cache at key of args already exist return it
+        if(cache[args]){
+            return cache[args]
+        }
+        // otherwise assign cache at the key of args to result
+        const result = fn.apply(this, args)
+        cache[args] = result
+        return result
+    }
+}
 // recursive solution
 // if isn't smaller then 2 call fib(n - 1) + fib(n - 2)
 // at the end it will be < 2 and we can add all the fib(n) together to get the result of n 
 // fib(6) will produce 8 fib(n),  fib(4) will produce 3 fib(n)
-// function fib(n) {
-//     return n < 2 ? n : fib(n - 1) + fib(n - 2)
-// }
+function fib(n) {
+    return n < 2 ? n : fib(n - 1) + fib(n - 2)
+}
 
+fib = memoize(fib)
 
 
 
