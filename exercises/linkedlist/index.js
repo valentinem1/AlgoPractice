@@ -51,11 +51,54 @@ class LinkedList {
             if(node.next === null){
                 return node;
             }else{
-                node = node.next
+                node = node.next;
             }
         }
     }
+
+    clear() {
+        return this.head = null;
+    }
+
+    removeFirst() {
+        return this.head = this.head.next;
+    }
     
+    removeLast() {
+        if(this.head === null){
+            return;
+        }
+        
+        if(this.head.next === null){
+            return this.head = null;
+        }
+        
+        let previous = this.head;
+        let node = this.head.next;
+        
+        while(node.next){
+            previous = node
+            node = node.next
+        }
+        previous.next = null
+
+        // first try
+        // check as long as node exist
+        // check if node.next equals to null
+        // if yes reset previous.next to null
+        // and reset node to null
+        // move previous to the next node
+        // and move node to the next node
+        // while(node){
+        //     if(node.next === null){
+        //         previous.next = null
+        //         node = null
+        //     }else{
+        //         previous = node
+        //         node = node.next
+        //     }
+        // }
+    }
 }
 
 module.exports = { Node, LinkedList };
