@@ -32,10 +32,28 @@ class LinkedList {
         // check while node !== null keep iterating through the list
         // and increment the counter by 1
         while(node){
-            count++
-            node = node.next
+            count++;
+            node = node.next;
         }
-        return count
+        return count;
+    }
+
+    getFirst() {
+        return this.head;
+    }
+
+    getLast() {
+        let node = this.head;
+        // check if the next node equal null 
+        // if yes it means it is the last node so return it
+        // otherwise increment node to the next node until finding the last one
+        while(node){
+            if(node.next === null){
+                return node;
+            }else{
+                node = node.next
+            }
+        }
     }
     
 }
