@@ -24,8 +24,20 @@ class LinkedList {
         // this allows to insert a Node inside our list from the beginning of the list
         this.head = new Node(data, this.head)
     }
+
+    size() {
+        let count = 0;
+        let node = this.head;
+
+        // check while node !== null keep iterating through the list
+        // and increment the counter by 1
+        while(node){
+            count++
+            node = node.next
+        }
+        return count
+    }
     
 }
-// const l = new LinkedList(Node)
 
 module.exports = { Node, LinkedList };
