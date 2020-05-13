@@ -43,6 +43,9 @@ class LinkedList {
     }
 
     getLast() {
+        if(!this.head){
+            return null;
+        }
         let node = this.head;
         // check if the next node equal null 
         // if yes it means it is the last node so return it
@@ -98,6 +101,15 @@ class LinkedList {
         //         node = node.next
         //     }
         // }
+    }
+
+    insertLast(data) {
+        const tail = this.getLast();
+        if(tail){
+            return tail.next = new Node(data);
+        }else{
+            return this.head = new Node(data);
+        }
     }
 }
 
