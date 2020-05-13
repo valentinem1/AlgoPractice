@@ -111,6 +111,27 @@ class LinkedList {
             return this.head = new Node(data);
         }
     }
+
+    getAt(index) {
+        let counter = 0;
+        let node = this.head;
+
+        while(node){
+            if(index === counter){
+                return node;
+            }
+            node = node.next;
+            counter++;
+        }
+        // if the index is bigger than the list it exit the while loop and return null since no node has been found
+        return null;
+        
+         // could work for checking if the index is bigger than the list
+        // will loop through the list when not needed since size() already loop through the list
+        // if(index > this.size()){
+        //     return null;
+        // }
+    }
 }
 
 module.exports = { Node, LinkedList };
