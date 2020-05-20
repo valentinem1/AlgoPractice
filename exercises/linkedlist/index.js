@@ -170,6 +170,20 @@ class LinkedList {
         const node = new Node(data, previous.next);
         previous.next = node;
     }
+
+    forEach(fn) {
+        let node = this.head;
+        let counter = 0 ;
+        while(node){
+            // passes the inner function
+            // each iteration the node and counter will get incremented
+            // this enables to create the forEach() loop which takes a call back function with the node and an index, 
+            // the counter keeps track of the index for each iteration in that situation
+            fn(node, counter)
+            counter++;
+            node = node.next;
+        }
+    }
     
 }
 
