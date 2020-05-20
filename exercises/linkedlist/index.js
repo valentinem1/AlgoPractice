@@ -149,6 +149,28 @@ class LinkedList {
         const previous = this.getAt(index - 1);
         previous.next = previous.next.next;
     }
+
+    insertAt(data, index) {
+        if(!this.head){
+            return this.head = new Node(data);
+        }
+
+        if(index === 0){
+            return this.head = new Node(data, this.head);
+        }
+
+        // if(!this.getAt(index)){
+        //     return this.getLast().next = new Node(data);
+        // }
+
+        // to get the previous node from the index use getAt(index - 1)
+        // if the index is out of bound using getLast() and assigning it to previous allows to find the last node
+        // and set the next of the node to the previous.next which in that case is null since it's the last one.
+        let previous = this.getAt(index-1) || this.getLast();
+        const node = new Node(data, previous.next);
+        previous.next = node;
+    }
+    
 }
 
 module.exports = { Node, LinkedList };
